@@ -36,7 +36,7 @@ This project demonstrates how to use OpenL3 deep learning models to convert audi
 ## Installation
 
 ```bash
-pip install tensorflow==2.13.0 openl3==0.4.2 soundfile matplotlib numpy scikit-image apsw scipy scikit-learn
+uv sync
 ```
 
 ## Usage
@@ -44,19 +44,19 @@ pip install tensorflow==2.13.0 openl3==0.4.2 soundfile matplotlib numpy scikit-i
 ### 1. Generate Test Audio
 Create synthetic audio files with different characteristics:
 ```bash
-python create_test_audio.py
+uv run python create_test_audio.py
 ```
 
 ### 2. Generate Embeddings
 Process audio files and store embeddings in database:
 ```bash
-python simple_embed.py
+uv run python simple_embed.py
 ```
 
 ### 3. Analyze Similarities
 Compare embeddings and visualize results:
 ```bash
-python compare_embeddings.py
+uv run python compare_embeddings.py
 ```
 
 ## Results
