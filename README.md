@@ -1,25 +1,25 @@
-# Audio Embeddings with OpenL3
+# Audio Embedding Similarity Search
 
-Generate and analyze deep audio embeddings using OpenL3 for music similarity detection and clustering.
+Generate deep audio embeddings using OpenL3 and perform perceptual similarity search across audio content.
 
 ## Embedding Visualization
 
 ![Embedding Visualization](embedding_visualization.png)
 
-*t-SNE visualization showing how different audio types cluster in the embedding space*
+*Similar audio types (chords, noise, harmonics) form distinct clusters in the 2D projection of 512-dimensional embedding space*
 
 ## Test Audio Dataset
 
 The system is validated using synthetic audio with distinct characteristics:
 
-- **c_major_chord.mp3** - C major chord (C-E-G notes)
-- **g_major_chord.mp3** - G major chord (G-B-D notes) 
-- **f_major_chord.mp3** - F major chord (F-A-C notes)
-- **bass_sound.mp3** - Low frequency sine wave (80 Hz)
-- **bell_sound.mp3** - High frequency sine wave (1000 Hz)
-- **complex_harmonic.mp3** - Multi-frequency harmonic series (220, 440, 880, 1320 Hz)
-- **white_noise.mp3** - Random white noise
-- **pink_noise.mp3** - Pink noise (1/f spectrum)
+- **[c_major_chord.mp3](previews/c_major_chord.mp3)** - C major chord (C-E-G notes)
+- **[g_major_chord.mp3](previews/g_major_chord.mp3)** - G major chord (G-B-D notes) 
+- **[f_major_chord.mp3](previews/f_major_chord.mp3)** - F major chord (F-A-C notes)
+- **[bass_sound.mp3](previews/bass_sound.mp3)** - Low frequency sine wave (80 Hz)
+- **[bell_sound.mp3](previews/bell_sound.mp3)** - High frequency sine wave (1000 Hz)
+- **[complex_harmonic.mp3](previews/complex_harmonic.mp3)** - Multi-frequency harmonic series (220, 440, 880, 1320 Hz)
+- **[white_noise.mp3](previews/white_noise.mp3)** - Random white noise
+- **[pink_noise.mp3](previews/pink_noise.mp3)** - Pink noise (1/f spectrum)
 
 ## Overview
 

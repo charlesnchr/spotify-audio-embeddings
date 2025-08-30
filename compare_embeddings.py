@@ -169,25 +169,30 @@ def visualize_embeddings(embeddings_dict, output_path="embedding_visualization.p
     # Create visualization
     plt.figure(figsize=(12, 8))
     
+    # Define color mapping
+    color_map = {
+        'Chord': 'blue',
+        'Noise': 'red', 
+        'Bass': 'green',
+        'Bell': 'orange',
+        'Other': 'purple'
+    }
+    
     # Color code by type
     colors = []
     labels = []
     for sid in song_ids:
         if 'chord' in sid:
-            colors.append('blue')
             labels.append('Chord')
         elif 'noise' in sid:
-            colors.append('red')
             labels.append('Noise')
         elif 'bass' in sid:
-            colors.append('green')
             labels.append('Bass')
         elif 'bell' in sid:
-            colors.append('orange')
             labels.append('Bell')
         else:
-            colors.append('purple')
             labels.append('Other')
+        colors.append(color_map[labels[-1]])
     
     plt.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1], c=colors, s=100, alpha=0.7)
     
@@ -201,11 +206,10 @@ def visualize_embeddings(embeddings_dict, output_path="embedding_visualization.p
     plt.ylabel('t-SNE Dimension 2')
     plt.grid(True, alpha=0.3)
     
-    # Create legend
-    unique_labels = list(set(labels))
-    unique_colors = ['blue', 'red', 'green', 'orange', 'purple'][:len(unique_labels)]
-    for label, color in zip(unique_labels, unique_colors):
-        plt.scatter([], [], c=color, label=label, s=100, alpha=0.7)
+    # Create legend with correct color mapping
+    for label, color in color_map.items():
+        if label in labels:  # Only show labels that exist in the data
+            plt.scatter([], [], c=color, label=label, s=100, alpha=0.7)
     plt.legend()
     
     plt.tight_layout()
